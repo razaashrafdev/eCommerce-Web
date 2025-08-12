@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Our Store</h1>
+        <div class="header-actions">
+            <button onclick="viewCart()" id="cartButton">Cart (0)</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="productsSection">
+            <h2>Available Products</h2>
+            <div id="productsList" class="products-grid">
+                <p class="loading">Loading products...</p>
+            </div>
+        </div>
+
+        <div id="cartSection" style="display: none;">
+            <h2>Your Cart</h2>
+            <div id="cartList">
+                <p class="loading">Loading cart...</p>
+            </div>
+            <div id="cartTotal">Total: $0.00</div>
+            <button onclick="hideCart()">Continue Shopping</button>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
